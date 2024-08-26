@@ -10,7 +10,7 @@ import (
 	"gorm.io/gorm"
 )
 
-func (g *GormDatabase) CreateAuthor(ctx context.Context, author *entity.Article) error {
+func (g *GormDatabase) CreateAuthor(ctx context.Context, author *entity.Author) error {
 	return g.queryMetric.Do("create_author", func() error {
 		err := g.db.WithContext(ctx).Create(author).Error
 		if err != nil {

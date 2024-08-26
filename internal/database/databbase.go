@@ -13,7 +13,7 @@ var(
 type Database interface{
 	Migrate()error
 	GetAuthor(ctx context.Context,id uint)(entity.Author,error)
-	CreateAuthor(ctx context.Context, author *entity.Article)error
+	CreateAuthor(ctx context.Context, author *entity.Author)error
 
 	ListTags(ctx context.Context)([]entity.Tag,error)
 	ListTagArticles(ctx context.Context, slug string)([]entity.Article,error)
