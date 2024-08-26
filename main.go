@@ -12,6 +12,7 @@ import (
 	"github.com/rezaAmiri123/scalable-backend/internal/database"
 	"github.com/samber/lo"
 	"github.com/sirupsen/logrus"
+	_ "go.uber.org/automaxprocs"
 )
 
 func main() {
