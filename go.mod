@@ -8,6 +8,7 @@ require (
 	github.com/prometheus/client_golang v1.20.2
 	github.com/samber/lo v1.47.0
 	github.com/sirupsen/logrus v1.9.3
+	go.uber.org/automaxprocs v1.5.3
 	gorm.io/driver/mysql v1.5.7
 	gorm.io/gorm v1.25.11
 	gorm.io/plugin/dbresolver v1.5.2
