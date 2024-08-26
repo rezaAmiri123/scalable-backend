@@ -1,6 +1,8 @@
 package database
 
 import (
+	"time"
+
 	"github.com/samber/lo"
 	"github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
@@ -28,5 +30,11 @@ func NewGorm(masterDSN string, replicaDSN ...string) (*gorm.DB, error) {
 		logrus.WithError(err).Error("couldn't setup replica databases")
 		return nil, err
 	}
+
+	sqlDB,_ := db.DB()
+	sqlDB.SetMaxIdleConns(200)
+	sqlDB.SetMaxOpenConns(200)
+	sqlDB.SetConnMaxLifetime(time.Hour)
+
 	return db, nil
 }
