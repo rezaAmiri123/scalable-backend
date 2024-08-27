@@ -3,6 +3,7 @@ module github.com/rezaAmiri123/scalable-backend
 go 1.22.1
 
 require (
+	github.com/allegro/bigcache/v3 v3.1.0
 	github.com/joho/godotenv v1.5.1
 	github.com/labstack/echo/v4 v4.12.0
 	github.com/prometheus/client_golang v1.20.2
