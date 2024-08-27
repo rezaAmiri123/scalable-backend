@@ -6,6 +6,7 @@ require (
 	github.com/joho/godotenv v1.5.1
 	github.com/labstack/echo/v4 v4.12.0
 	github.com/prometheus/client_golang v1.20.2
+	github.com/redis/rueidis v1.0.44
 	github.com/samber/lo v1.47.0
 	github.com/sirupsen/logrus v1.9.3
 	go.uber.org/automaxprocs v1.5.3
