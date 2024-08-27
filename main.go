@@ -41,6 +41,7 @@ func main() {
 	synchronize := cache.NewSync(rdb, gdb)
 	_ = synchronize
 	rc := cache.NewRedisCache(rdb)
+	inmem := cache.NewInMemoryCache(rc)
 
 	// set up Prometheus exposer
 	http.Handle("/metric", promhttp.Handler())
@@ -53,7 +54,7 @@ func main() {
 	}()
 	// set up the http apis
 	e := echo.New()
-	controller.NewEchoController(e, gdb, rc)
+	controller.NewEchoController(e, gdb, rc, inmem)
 	logrus.Info("starting the api server on port 8080")
 	logrus.WithError(err).Error(e.Start(":8080"))
 }
